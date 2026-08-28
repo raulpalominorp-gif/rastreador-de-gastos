@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habilidades disponibles</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --text: #1c1f26;
+    --muted: #5b6472;
+    --accent: #4f6df5;
+    --border: #e4e7ec;
+    --chip-bg: #eef1fb;
+    --chip-text: #3b52c4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161c;
+      --card-bg: #1c1f28;
+      --text: #eceef2;
+      --muted: #9aa3b2;
+      --accent: #8ea2ff;
+      --border: #2b2f3a;
+      --chip-bg: #262b3d;
+      --chip-text: #a9b6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  header {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.02em;
+  }
+  header p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.98rem;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  section h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+    padding-left: 0.15rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.95rem 1.05rem;
+  }
+  .card .name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .card .name code {
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.82rem;
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    padding: 0.1rem 0.45rem;
+    border-radius: 5px;
+  }
+  .card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  footer {
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Habilidades (skills) disponibles</h1>
+  <p>Listado del contexto de habilidades activas en esta sesión de Claude Code, sin entrar en el detalle de su funcionamiento interno.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>Descubrimiento y configuración</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>find-skills</code></div>
+      <p>Ayuda a descubrir e instalar nuevas habilidades cuando se pregunta "¿hay una skill para X?".</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>update-config</code></div>
+      <p>Configura el harness de Claude Code vía settings.json: permisos, hooks, variables de entorno.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>keybindings-help</code></div>
+      <p>Personaliza atajos de teclado y combinaciones (chords) en keybindings.json.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>fewer-permission-prompts</code></div>
+      <p>Analiza el historial de comandos para sugerir una lista blanca y reducir prompts de permiso.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Diseño y frontend</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>frontend-design</code></div>
+      <p>Guía de dirección estética, tipografía y decisiones visuales al construir o rediseñar una UI.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>web-design-guidelines</code></div>
+      <p>Revisa código de UI frente a buenas prácticas de accesibilidad y diseño de interfaz web.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>dataviz</code></div>
+      <p>Guía para crear cualquier gráfico, dashboard o visualización de datos de forma consistente.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>design</code></div>
+      <p>Crea un lienzo de diseño multi-artboard (mockups, landing pages, pósters) publicado como Artifact.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Artifacts (páginas publicadas)</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>artifact-design</code></div>
+      <p>Calibra la inversión de diseño adecuada antes de escribir cualquier Artifact.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>artifact-diagramming</code></div>
+      <p>Técnicas de diagramación y mecánica de SVG legible en ambos temas dentro de Artifacts.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>artifact-capabilities</code></div>
+      <p>Capacidades en tiempo real de un Artifact publicado: datos en vivo, estado compartido, archivos.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Código: revisión y calidad</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>code-review</code></div>
+      <p>Revisa el diff actual, un PR, rama o ruta buscando errores y oportunidades de simplificación.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>simplify</code></div>
+      <p>Revisa y aplica mejoras de reutilización, simplicidad y eficiencia sobre el código modificado.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>security-review</code></div>
+      <p>Realiza una revisión de seguridad de los cambios pendientes en la rama actual.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>init</code></div>
+      <p>Inicializa un nuevo archivo CLAUDE.md con documentación del código base.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ejecución y automatización</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>run</code></div>
+      <p>Lanza y ejecuta la app del proyecto para verificar visualmente un cambio.</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>loop</code></div>
+      <p>Ejecuta un prompt o comando de forma recurrente a un intervalo dado (o auto-pausado).</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>schedule</code></div>
+      <p>Crea, actualiza o lista agentes en la nube programados con cron (rutinas recurrentes o puntuales).</p>
+    </div>
+    <div class="card">
+      <div class="name"><code>claude-in-chrome</code></div>
+      <p>Automatiza el navegador Chrome: clics, formularios, capturas y lectura de consola.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Referencia técnica</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name"><code>claude-api</code></div>
+      <p>Referencia de la API de Claude / SDK de Anthropic: modelos, precios, streaming, tool use, caché.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Otro contexto disponible en esta sesión</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="name">Memoria persistente</div>
+      <p>Archivos de memoria en disco con contexto del usuario, feedback y datos del proyecto entre sesiones.</p>
+    </div>
+    <div class="card">
+      <div class="name">Sub-agentes</div>
+      <p>Agentes especializados invocables (Explore, Plan, general-purpose, claude-code-guide, entre otros).</p>
+    </div>
+    <div class="card">
+      <div class="name">Herramientas MCP</div>
+      <p>Integraciones externas disponibles: Gmail, Google Calendar, Google Drive, Notion, Mailopoly Inbox.</p>
+    </div>
+    <div class="card">
+      <div class="name">CLAUDE.md del proyecto</div>
+      <p>Instrucciones específicas de este repositorio (Rastreador de Gastos) que guían el trabajo aquí.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Generado automáticamente a partir del contexto de la sesión de Claude Code activa el 2026-08-22.
+</footer>
+
+</body>
+</html>
